@@ -14,43 +14,105 @@
 **/
 
 //Bibliotecas
-#include<iostream>
-#include<string>
+#include <iostream> //Para imprimir
+#include <string>
+#include "Mascota.h" // Objetos de mi proyecto
+#include "Casa.h"
 
-#include"Perro.h" // Objetos de mi proyecto
-#include"Gato.h"
-#include"Conejo.h"
-
+//Menú
+void menu(){
+  //Imprime el menú de los métodos que se pueden utilizar
+    std::cout << "\n============== Menu ==============\n";
+    std::cout << "1. Agregar un Perro \n";
+    std::cout << "2. Agregar un Gato \n";
+    std::cout << "3. Agregar un Conejo \n";
+    std::cout << "4. Mostrar Perros \n";
+    std::cout << "5. Mostrar Gatos \n";
+    std::cout << "6. Mostrar Conejos \n";
+    std::cout << "7. Cantidad de alimento Perros \n";
+    std::cout << "8. Cantidad de alimento Gatos \n";
+    std::cout << "9. Cantidad de alimento Conejos \n";
+    std::cout << "10. Salir \n";
+}
 
 //Main del programa
 int main(){
+  Casa casa;
 
-  Perro perro_1("Pedro", 10, 3.75, "Chihuahua");
-  std::cout << "Esta es la informacion del Perro 1" << std::endl;
-  std::cout << "Nombre: " << perro_1.get_nombre() << std::endl;
-  std::cout << "Edad: " << perro_1.get_edad() << std::endl;
-  std::cout << "Peso: " << perro_1.get_peso() << "kg" << std::endl;
-  std::cout << "Raza: " << perro_1.get_raza() << std::endl;
-  std::cout << "Esta es la cantidad de alimento que debe consumir" << std::endl;
-  std::cout << perro_1.cantidadAlimentoPerro() << "g\n" << std::endl;
+  std::string nombre;
+  int edad;
+  float peso;
+  std::string raza;
 
-  Gato gato_1("Jorge", 6, 6.5, "Siames");
-  std::cout << "Esta es la informacion del Gato 1" << std::endl;
-  std::cout << "Nombre: " << gato_1.get_nombre() << std::endl;
-  std::cout << "Edad: " << gato_1.get_edad() << std::endl;
-  std::cout << "Peso: " << gato_1.get_peso() << "kg" << std::endl;
-  std::cout << "Raza: " << gato_1.get_raza() << std::endl;
-  std::cout << "Esta es la cantidad de alimento que debe consumir" << std::endl;
-  std::cout << gato_1.cantidadAlimentoGato() << "g\n" << std::endl;
+  int opcion = 0;
 
-  Conejo conejo_1("Destructor", 4, 1.1, "Mini Rex");
-  std::cout << "Esta es la informacion del Conejo 1" << std::endl;
-  std::cout << "Nombre: " << conejo_1.get_nombre() << std::endl;
-  std::cout << "Edad: " << conejo_1.get_edad() << std::endl;
-  std::cout << "Peso: " << conejo_1.get_peso() << "kg" << std::endl;
-  std::cout << "Raza: " << conejo_1.get_raza() << std::endl;
-  std::cout << "Esta es la cantidad de alimento que debe consumir" << std::endl;
-  std::cout << conejo_1.cantidadAlimentoConejo() << "g\n" << std::endl;
+  //Ciclo para desplegar el menú de los metodos hasta que el usuario desee salir
+  while(opcion < 10 && opcion >= 0){
+    //Se imprime el menú
+    menu();
+    //Pide al usuario la opción que desea ejecutar
+    std::cin >> opcion;
+
+    //Condiciaonal para ejecuar la opción deseada por el usuario
+    if (opcion == 1){
+      std::cout << "Cual es su nombre\n";
+      std::cin >> nombre;
+      std::cout << "Cual es su edad\n";
+      std::cin >> edad;
+      std::cout << "Cual es su peso\n";
+      std::cin >> peso;
+      std::cout << "Cual es su raza\n";
+      std::cin >> raza;
+      casa.agregaPerro(nombre, edad, peso, raza);
+    }
+    else if (opcion == 2){
+      std::cout << "Cual es su nombre\n";
+      std::cin >> nombre;
+      std::cout << "Cual es su edad\n";
+      std::cin >> edad;
+      std::cout << "Cual es su peso\n";
+      std::cin >> peso;
+      std::cout << "Cual es su raza\n";
+      std::cin >> raza;
+      casa.agregaGato(nombre, edad, peso, raza);
+    }
+    else if (opcion == 3){
+      std::cout << "Cual es su nombre\n";
+      std::cin >> nombre;
+      std::cout << "Cual es su edad\n";
+      std::cin >> edad;
+      std::cout << "Cual es su peso\n";
+      std::cin >> peso;
+      std::cout << "Cual es su raza\n";
+      std::cin >> raza;
+      casa.agregaConejo(nombre, edad, peso, raza);
+    }
+    else if (opcion == 4){
+      casa.imprimePerros();
+    }
+    else if (opcion == 5){
+      casa.imprimeGatos();
+    }
+    else if (opcion == 6){
+      casa.imprimeConejos();
+    }
+    else if (opcion == 7){
+      casa.comidaPerros();
+    }
+    else if (opcion == 8){
+      casa.comidaGatos();
+    }
+    else if (opcion == 9){
+      casa.comidaConejos();
+    }
+    else if (opcion == 10){
+      break;
+    }
+    else {
+      std::cout << "\nEntrada invalida, intenta de nuevo.\n";
+    }
+
+  }
 
   return 0;
 }
