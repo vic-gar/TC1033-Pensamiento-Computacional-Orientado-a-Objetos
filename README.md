@@ -5,3 +5,7 @@ Una casa de acogida animal necesita llevar un registro de los animales que entra
 
 ## FUNCIONALIDAD 
 El programa por el momento sol permite el acceso a los datos de cada animal y de modificar estos datos, además del cálculo de su alimento diario depnediendo de su peso y del tipo de mascota que sea.
+
+##CORRECCIONES
+1. Se separaron las clases en distintos archivos .h y se modificó el nombre del include.
+2. Se incluyeron los constructores en el Diagrama de Clases.
