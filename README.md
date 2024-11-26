@@ -9,3 +9,4 @@ El programa por el momento sol permite el acceso a los datos de cada animal y de
 ## CORRECCIONES
 1. Se separaron las clases en distintos archivos .h y se modificó el nombre del include.
 2. Se incluyeron los constructores en el Diagrama de Clases.
+3. Se modificó el simbolo en el UML de los atributos protected de la clase Mascota.
