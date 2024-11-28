@@ -10,3 +10,13 @@ El programa por el momento sol permite el acceso a los datos de cada animal y de
 1. Se separaron las clases en distintos archivos .h y se modificó el nombre del include.
 2. Se incluyeron los constructores en el Diagrama de Clases.
 3. Se modificó el simbolo en el UML de los atributos protected de la clase Mascota.
+4. Se modificó el como se imprimen los nombres y razas de las mascotas, esto para evitar un problema que sucede al momento de querer colocar un nombre o raza con dos o mas palabras separadas por espacios.
+ANTES:
+  std::cin >> nombre;
+  std::cin >> raza;
+
+NUEVO:
+  std::cin.ignore();
+  std::getline(std::cin, nombre);
+  std::cin.ignore();
+  std::getline(std::cin, raza);
