@@ -56,35 +56,41 @@ int main(){
     //Condiciaonal para ejecuar la opción deseada por el usuario
     if (opcion == 1){
       std::cout << "Cual es su nombre\n";
-      std::cin >> nombre;
+      std::cin.ignore();
+      std::getline(std::cin, nombre);
       std::cout << "Cual es su edad\n";
       std::cin >> edad;
       std::cout << "Cual es su peso\n";
       std::cin >> peso;
       std::cout << "Cual es su raza\n";
-      std::cin >> raza;
+      std::cin.ignore();
+      std::getline(std::cin, raza);
       casa.agregaPerro(nombre, edad, peso, raza);
     }
     else if (opcion == 2){
       std::cout << "Cual es su nombre\n";
-      std::cin >> nombre;
+      std::cin.ignore();
+      std::getline(std::cin, nombre);
       std::cout << "Cual es su edad\n";
       std::cin >> edad;
       std::cout << "Cual es su peso\n";
       std::cin >> peso;
       std::cout << "Cual es su raza\n";
-      std::cin >> raza;
+      std::cin.ignore();
+      std::getline(std::cin, raza);
       casa.agregaGato(nombre, edad, peso, raza);
     }
     else if (opcion == 3){
       std::cout << "Cual es su nombre\n";
-      std::cin >> nombre;
+      std::cin.ignore();
+      std::getline(std::cin, nombre);
       std::cout << "Cual es su edad\n";
       std::cin >> edad;
       std::cout << "Cual es su peso\n";
       std::cin >> peso;
       std::cout << "Cual es su raza\n";
-      std::cin >> raza;
+      std::cin.ignore();
+      std::getline(std::cin, raza);
       casa.agregaConejo(nombre, edad, peso, raza);
     }
     else if (opcion == 4){
